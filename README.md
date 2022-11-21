@@ -31,3 +31,11 @@ their homepage.
 [=> gandi.net homepage (english)](https://www.gandi.net/en "Click to see")
 
 [=> gandi.net página (español)](https://www.gandi.net/es "Haga clic pa' ver")
+
+## License
+
+Please read the license file in this repository for more information. It's
+subject to change, but the latest copy in the repository's default branch is
+the current version.
+
+[=> The current License version](https://git.sr.ht/~rogeruiz/dns/tree/main/item/LICENSE "Click to see the license file")
