@@ -32,3 +32,23 @@ output "rogeruiz_lol_cname" {
   value       = resource.gandi_livedns_record.rogeruiz_kids_cname
   description = "The DNS lol (subdomain) CNAME record for Rogeruiz"
 }
+
+output "rog_gr_domain" {
+  value       = resource.gandi_livedns_domain.rog_gr.id
+  description = "The domain for Rog Gr"
+}
+
+output "rog_gr_dot_cname" {
+  value       = resource.gandi_livedns_record.rog_gr_dot_cname
+  description = "The DNS dot (subdomain) CNAME record for Rog Gr"
+}
+
+output "rog_gr_gmi_cname" {
+  value       = resource.gandi_livedns_record.rog_gr_gmi_cname
+  description = "The DNS gmi (subdomain) CNAME record for Rog Gr"
+}
+
+output "rog_gr_write_cname" {
+  value       = resource.gandi_livedns_record.rog_gr_write_cname
+  description = "The DNS write (subdomain) CNAME record for Rog Gr"
+}
