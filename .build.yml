@@ -7,6 +7,7 @@ environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
   TF_TOKEN_app_terraform_io: $(cat ~/.user-token-tf-gandi-dns)
+  TF_LOG: trace
 tasks:
   - setup: |
       pushd "${project}"
