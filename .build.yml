@@ -12,9 +12,8 @@ environment:
   TF_LOG: trace
 tasks:
   - setup: |
-      sudo usermod -aG tfenv ${USER}
       pushd "${project}"
-      tfenv install
+      sudo tfenv install
       popd
   - init: |
       pushd "${project}"
