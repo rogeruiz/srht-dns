@@ -3,9 +3,12 @@ packages:
   - tfenv
 environment:
   project: dns
+  TFENV_INSTALL_DIR: ~/.tfenv/
+  TFENV_CONFIG_DIR: ~/.tfenv-config/
 tasks:
   - setup: |
-      pushd ${project}
+      mkdir -p "${TFENV_CONFIG_DIR}"
+      pushd "${project}"
       tfenv install
       terraform init
       popd
