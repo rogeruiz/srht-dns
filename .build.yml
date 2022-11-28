@@ -6,12 +6,14 @@ secrets:
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
-  TFENV_CONFIG_DIR: ~/.tfenv-config/
   TF_TOKEN_app_terraform_io: $(cat ~/.api-key-tf-gandi-dns)
 tasks:
   - setup: |
       pushd "${project}"
       sudo tfenv install
+      popd
+  - init: |
+      pushd "${project}"
       terraform init
       popd
   - plan: |
