@@ -12,7 +12,7 @@ environment:
 tasks:
   - pre-setup: |
       pushd "${project}"
-      bash -c ./ci/build-tfc-rc.sh
+      bash ./ci/build-tfc-rc.sh
       popd
   - setup: |
       pushd "${project}"
