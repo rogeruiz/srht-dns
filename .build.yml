@@ -6,9 +6,9 @@ secrets:
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
-  TF_TOKEN_app_terraform_io: $(cat ~/.org-key-tf-gandi-dns)
 tasks:
   - setup: |
+      echo "TF_TOKEN_app_terraform_io=$(cat ~/.org-key-tf-gandi-dns)" >> ~/.buildenv
       pushd "${project}"
       sudo tfenv install
       popd
