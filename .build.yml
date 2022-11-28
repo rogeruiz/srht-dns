@@ -1,0 +1,13 @@
+image: archlinux
+packages:
+  - tfenv
+environment:
+  project: dns
+tasks:
+  - setup: |
+      pushd ${project}
+      tfenv install
+      terraform init
+      popd
+  - plan: |
+      echo "now let's do the plan!"
