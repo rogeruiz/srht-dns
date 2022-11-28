@@ -3,10 +3,12 @@ packages:
   - tfenv
 secrets:
   - ea59ef6c-8791-4e72-868c-6f73d1d97f47
+  - 2ccc82ee-d6e7-4764-92be-6202108272a0
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
   TF_TOKEN_app_terraform_io: $(cat ~/.user-token-tf-gandi-dns)
+  TF_VAR_gandi_api_key: $(cat ~/.gandi-api-key)
   TF_LOG: trace
 tasks:
   - setup: |
