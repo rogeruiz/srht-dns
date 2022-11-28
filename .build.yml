@@ -9,7 +9,7 @@ tasks:
   - setup: |
       mkdir -p "${TFENV_CONFIG_DIR}"
       pushd "${project}"
-      tfenv install
+      sudo tfenv install
       terraform init
       popd
   - plan: |
