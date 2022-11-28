@@ -23,4 +23,6 @@ tasks:
       terraform init -input=false
       popd
   - plan: |
-      echo "now let's do the plan!"
+      pushd "${project}"
+      terraform plan
+      popd
