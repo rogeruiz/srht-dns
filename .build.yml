@@ -2,13 +2,13 @@ image: archlinux
 packages:
   - tfenv
 secrets:
-  - b4c86ba6-f6a1-4308-833d-0ef4c2d8dbf6
+  - ea59ef6c-8791-4e72-868c-6f73d1d97f47
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
 tasks:
   - setup: |
-      echo "TF_TOKEN_app_terraform_io=$(cat ~/.org-key-tf-gandi-dns)" >> ~/.buildenv
+      echo "TF_TOKEN_app_terraform_io=$(cat ~/.user-token-tf-gandi-dns)" >> ~/.buildenv
       pushd "${project}"
       sudo tfenv install
       popd
