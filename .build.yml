@@ -11,6 +11,7 @@ tasks:
       echo "TF_TOKEN_app_terraform_io=$(cat ~/.user-token-tf-gandi-dns)" >> ~/.buildenv
       pushd "${project}"
       sudo tfenv install
+      terraform login
       popd
   - init: |
       pushd "${project}"
