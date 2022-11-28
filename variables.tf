@@ -1,6 +1,7 @@
 variable "gandi_api_key" {
   type        = string
   description = "The Gandi API key from the Account Management screen"
+  sensitive = true
 }
 
 # README: This is disabled as I'm not sure if I'll ever use it.
