@@ -10,7 +10,7 @@ environment:
   TF_VAR_gandi_api_key: $(cat ~/.gandi-api-key)
   TF_LOG: trace
 tasks:
-    pre-setup: |
+    pre_setup: |
       pushd "${project}"
       bash -c ./ci/build-tfc-rc.sh
       popd
