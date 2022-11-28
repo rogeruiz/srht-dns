@@ -1,13 +1,15 @@
 image: archlinux
 packages:
   - tfenv
+secrets:
+  - 900e8fd3-54b8-48be-b86c-d49a99f2de45
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
   TFENV_CONFIG_DIR: ~/.tfenv-config/
+  TF_TOKEN_app_terraform_io: $(cat ~/.api-key-tf-gandi-dns)
 tasks:
   - setup: |
-      mkdir -p "${TFENV_CONFIG_DIR}"
       pushd "${project}"
       sudo tfenv install
       terraform init
