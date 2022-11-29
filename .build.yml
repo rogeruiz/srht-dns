@@ -6,13 +6,18 @@ secrets:
   - 3b922da4-d093-4870-85eb-393a4c83dd78
 environment:
   project: dns
-  TFENV_INSTALL_DIR: ~/.tfenv/
-  TF_VAR_gandi_api_key: "$(cat ~/.gandi-api-key)"
-  TF_TOKEN_app_terraform_io: "$(cat ~/.user-token-tf-gandi-dns)"
 tasks:
+  - set-envs: |
+      echo "shh, setting some secrets!"
+      set +x
+      bash ${project}/ci/build-tfc-rc.sh
+      bash ${project}/ci/build-tfvars-file.sh
+      set -x
+      echo "ok, back to work."
   - install-tfenv: |
       pushd "${project}"
       sudo tfenv install
+      sudo tfenv use
       popd
   - terraform-init: |
       pushd "${project}"
