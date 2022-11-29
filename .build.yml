@@ -7,14 +7,17 @@ secrets:
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
-  TF_VAR_gandi_api_key: $(cat ~/.gandi-api-key)
-  TF_LOG: trace
+  TF_VAR_gandi_api_key: ""
+  TF_TOKEN_app_terraform_io: ""
 tasks:
   - pre-setup: |
       pushd "${project}"
       bash ./ci/build-tfc-rc.sh
       popd
   - setup: |
+  - set-envs: |
+      TF_VAR_gandi_api_key=$(cat ~/.gandi-api-key)
+      TF_TOKEN_app_terraform_io=$(cat ~/.user-token-tf-gandi-dns)
       pushd "${project}"
       sudo tfenv install
       popd
