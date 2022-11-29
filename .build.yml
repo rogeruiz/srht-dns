@@ -2,8 +2,8 @@ image: archlinux
 packages:
   - tfenv
 secrets:
-  - ea59ef6c-8791-4e72-868c-6f73d1d97f47
-  - 2ccc82ee-d6e7-4764-92be-6202108272a0
+  - cb219abd-c794-42c6-af48-0edc2f8dd5df
+  - 3b922da4-d093-4870-85eb-393a4c83dd78
 environment:
   project: dns
   TFENV_INSTALL_DIR: ~/.tfenv/
