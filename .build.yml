@@ -11,10 +11,12 @@ environment:
   TF_TOKEN_app_terraform_io: ""
 tasks:
   - set-envs: |
+      echo "shh making this secret!"
       set +x
       TF_VAR_gandi_api_key="$(cat ~/.gandi-api-key)"
       TF_TOKEN_app_terraform_io="$(cat ~/.user-token-tf-gandi-dns)"
       set -x
+      echo "back to work"
   - install-tfenv: |
       pushd "${project}"
       sudo tfenv install
