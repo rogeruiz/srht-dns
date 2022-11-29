@@ -1,5 +1,7 @@
 # DNS
 
+[![builds.sr.ht status](https://builds.sr.ht/~rogeruiz/dns/commits/main/.build.yml.svg)](https://builds.sr.ht/~rogeruiz/dns/commits/main/.build.yml?)
+
 This repository contains the DNS records for domains that I own. I don't
 consider any of this information sensitive or private as it's accessible
 by different tools. I use Terraform to manage my personal cloud
