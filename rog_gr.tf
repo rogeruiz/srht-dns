@@ -28,6 +28,6 @@ resource "gandi_livedns_record" "rog_gr_write_cname" {
   type = "CNAME"
   ttl  = "10800"
   values = [
-    "rogeruiz.github.io.",
+    "pages.sr.ht.",
   ]
 }
