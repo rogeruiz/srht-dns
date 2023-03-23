@@ -1,22 +1,14 @@
-# OS and Editor files
+# OS y Editor archivos
 .DS_Store
 *.DS_Store
-Thumbs.db
-*.sublime-project
-*.sublime-workspace
-.svn
-.idea
 .swp
 *.swp
 
-# Dropbox files that get included
-.dropbox
-
-# Ignore fun directories
+# Ignorar directorios divertidos
 tmp/
 work/
 
-# Ignore Terraform files
+# Ignorar archivos Terraform
 .terraform/
 **/.terraform/*
 *.tfstate
@@ -29,3 +21,6 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
+
+# Ignorar los variables de el ambiente
+.envrc
