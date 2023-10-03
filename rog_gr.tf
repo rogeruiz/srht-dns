@@ -2,17 +2,6 @@ resource "gandi_livedns_domain" "rog_gr" {
   name = "rog.gr"
 }
 
-resource "gandi_livedns_record" "rog_gr_root_mx" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "@"
-  type = "MX"
-  ttl  = 10800
-  values = [
-    "10 spool.mail.gandi.net.",
-    "50 fb.mail.gandi.net.",
-  ]
-}
-
 resource "gandi_livedns_record" "rog_gr_root_txt" {
   zone = resource.gandi_livedns_domain.rog_gr.id
   name = "@"
