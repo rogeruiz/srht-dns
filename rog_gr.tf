@@ -9,6 +9,7 @@ resource "gandi_livedns_record" "rog_gr_root_txt" {
   ttl  = 10800
   values = [
     "\"v=spf1 include:_mailcust.gandi.net ?all\"",
+    "\"google-site-verification=IztwJSDmloiYJFmZU9U-oIl4VTX3fdTVcVbfIIB3PO8\"",
   ]
 }
 
