@@ -2,6 +2,16 @@ resource "gandi_livedns_domain" "rog_gr" {
   name = "rog.gr"
 }
 
+resource "gandi_livedns_record" "rog_gr_root_a" {
+  zone = resource.gandi_livedns_domain.rog_gr.id
+  name = "@"
+  type = "A"
+  ttl  = "900"
+  values = [
+    "173.195.146.139",
+  ]
+}
+
 resource "gandi_livedns_record" "rog_gr_root_txt" {
   zone = resource.gandi_livedns_domain.rog_gr.id
   name = "@"
@@ -86,6 +96,16 @@ resource "gandi_livedns_record" "rog_gr_dot_cname" {
 resource "gandi_livedns_record" "rog_gr_write_cname" {
   zone = resource.gandi_livedns_domain.rog_gr.id
   name = "write"
+  type = "CNAME"
+  ttl  = "10800"
+  values = [
+    "pages.sr.ht.",
+  ]
+}
+
+resource "gandi_livedns_record" "rog_gr_resume_cname" {
+  zone = resource.gandi_livedns_domain.rog_gr.id
+  name = "resume"
   type = "CNAME"
   ttl  = "10800"
   values = [
