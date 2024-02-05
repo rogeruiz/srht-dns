@@ -1,0 +1,11 @@
+# https://numtide.github.io/devshell
+[[commands]]
+package = "terraform"
+
+[devshell]
+name = "gandi-dns"
+
+packages = [
+  "terraform-ls",
+  "tflint",
+]

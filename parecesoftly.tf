@@ -8,6 +8,6 @@ resource "gandi_livedns_record" "parecesoftly_root_a" {
   type = "A"
   ttl  = "10800"
   values = [
-    "173.195.146.139",
+    "46.23.81.157",
   ]
 }

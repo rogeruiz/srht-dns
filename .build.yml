@@ -25,5 +25,5 @@ tasks:
       popd
   - terraform-plan: |
       pushd "${project}"
-      terraform plan
+      terraform -auto-approve
       popd

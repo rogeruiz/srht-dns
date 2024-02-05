@@ -24,3 +24,4 @@ terraform.rc
 
 # Ignorar los variables de el ambiente
 .envrc
+.direnv/

@@ -8,7 +8,7 @@ resource "gandi_livedns_record" "rog_gr_root_a" {
   type = "A"
   ttl  = "900"
   values = [
-    "173.195.146.139",
+    "46.23.81.157",
   ]
 }
 

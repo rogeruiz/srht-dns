@@ -142,3 +142,13 @@ resource "gandi_livedns_record" "nine_points_cook_cname" {
     "pages.sr.ht.",
   ]
 }
+
+resource "gandi_livedns_record" "nine_points_useless_buttons_cname" {
+  zone = resource.gandi_livedns_domain.nine_points.id
+  name = "useless-buttons"
+  type = "CNAME"
+  ttl  = 5400
+  values = [
+    "cname.vercel-dns.com.",
+  ]
+}
