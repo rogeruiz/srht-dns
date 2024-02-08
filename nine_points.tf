@@ -8,7 +8,7 @@ resource "gandi_livedns_record" "nine_points_root_a" {
   type = "A"
   ttl  = 10800
   values = [
-    "217.70.184.38",
+    "46.23.81.157",
   ]
 }
 
@@ -129,7 +129,7 @@ resource "gandi_livedns_record" "nine_points_www_cname" {
   type = "CNAME"
   ttl  = 10800
   values = [
-    "webredir.vip.gandi.net.",
+    "pages.sr.ht.",
   ]
 }
 
