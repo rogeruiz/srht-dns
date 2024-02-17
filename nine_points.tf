@@ -18,8 +18,8 @@ resource "gandi_livedns_record" "nine_points_root_mx" {
   type = "MX"
   ttl  = 10800
   values = [
-    "10 spool.mail.gandi.net.",
-    "50 fb.mail.gandi.net.",
+    "10 mx01.mail.icloud.com.",
+    "10 mx02.mail.icloud.com",
   ]
 }
 
@@ -29,97 +29,18 @@ resource "gandi_livedns_record" "nine_points_root_txt" {
   type = "TXT"
   ttl  = 10800
   values = [
-    "\"v=spf1 include:_mailcust.gandi.net ?all\"",
+    "apple-domain=eK9WNHbcuQdw4QrJ",
+    "v=spf1 include:icloud.com ~all",
   ]
 }
 
-resource "gandi_livedns_record" "nine_points_imaptcp_srv" {
+resource "gandi_livedns_record" "nine_points_root_dkim" {
   zone = resource.gandi_livedns_domain.nine_points.id
-  name = "_imap._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 0 0   .",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_imapstcp_srv" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "_imaps._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 1 993 mail.gandi.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_pop3_srv" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "_pop3._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 0 0   .",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_pop3s_srv" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "_pop3s.tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "10 1 995 mail.gandi.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_submission_srv" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "_submission._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 1 465 mail.gandi.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_gm1domainkey_cname" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "gm1._domainkey"
+  name = "sig1._domainkey"
   type = "CNAME"
   ttl  = 10800
   values = [
-    "gm1.gandimail.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_gm2domainkey_cname" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "gm2._domainkey"
-  type = "CNAME"
-  ttl  = 10800
-  values = [
-    "gm2.gandimail.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_gm3domainkey_cname" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "gm3._domainkey"
-  type = "CNAME"
-  ttl  = 10800
-  values = [
-    "gm3.gandimail.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_webmail_cname" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "webmail"
-  type = "CNAME"
-  ttl  = 10800
-  values = [
-    "webmail.gandi.net.",
+    "sig1.dkim.0p9.co.at.icloudmailadmin.com.",
   ]
 }
 
