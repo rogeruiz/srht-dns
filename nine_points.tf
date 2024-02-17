@@ -19,7 +19,7 @@ resource "gandi_livedns_record" "nine_points_root_mx" {
   ttl  = 10800
   values = [
     "10 mx01.mail.icloud.com.",
-    "10 mx02.mail.icloud.com",
+    "10 mx02.mail.icloud.com.",
   ]
 }
 
