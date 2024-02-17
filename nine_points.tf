@@ -30,7 +30,7 @@ resource "gandi_livedns_record" "nine_points_root_txt" {
   ttl  = 10800
   values = [
     "apple-domain=eK9WNHbcuQdw4QrJ",
-    "v=spf1 include:icloud.com ~all",
+    "\"v=spf1 include:icloud.com ~all\"",
   ]
 }
 
