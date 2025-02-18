@@ -14,6 +14,7 @@ resource "gandi_livedns_record" "rogeruiz_kids_cname" {
 
 resource "gandi_livedns_record" "rogeruiz_root_mx" {
   zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "@"
   type = "MX"
   ttl  = 3600
   values = [
@@ -24,6 +25,7 @@ resource "gandi_livedns_record" "rogeruiz_root_mx" {
 
 resource "gandi_livedns_record" "rogeruiz_root_txt" {
   zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "@"
   type = "TXT"
   ttl  = 3600
   values = [
