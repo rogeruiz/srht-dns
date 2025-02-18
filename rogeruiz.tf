@@ -12,12 +12,24 @@ resource "gandi_livedns_record" "rogeruiz_kids_cname" {
   ]
 }
 
-resource "gandi_livedns_record" "rogeruiz_lol_cname" {
-  zone = resource.gandi_livedns_domain.rogeruiz.id
-  name = "lol"
-  type = "CNAME"
-  ttl  = "5400"
+resource "gandi_livedns_record" "rogeruiz_root_mx" {
+  zone     = resource.gandi_livedns_domain.rogeruiz.id
+  name     = "@"
+  type     = "MX"
+  ttl      = 3600
+  priority = 10
   values = [
-    "domains.tumblr.com.",
+    "mx1.forwardemail.net.",
+    "mx2.forwardemail.net."
+  ]
+}
+
+resource "gandi_livedns_record" "rogeruiz_root_txt" {
+  zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "@"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "forward-email-site-verification=hb3tJy0kM0",
   ]
 }
