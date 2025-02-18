@@ -29,6 +29,6 @@ resource "gandi_livedns_record" "rogeruiz_root_txt" {
   type = "TXT"
   ttl  = 3600
   values = [
-    "forward-email-site-verification=hb3tJy0kM0",
+    "forward-email-site-verification=45Jc1z9SEu",
   ]
 }
