@@ -16,10 +16,10 @@ resource "gandi_livedns_record" "nine_points_root_mx" {
   zone = resource.gandi_livedns_domain.nine_points.id
   name = "@"
   type = "MX"
-  ttl  = 10800
+  ttl  = 3600
   values = [
-    "10 mx01.mail.icloud.com.",
-    "10 mx02.mail.icloud.com.",
+    "10 mx1.forwardemail.net.",
+    "10 mx2.forwardemail.net."
   ]
 }
 
@@ -27,20 +27,9 @@ resource "gandi_livedns_record" "nine_points_root_txt" {
   zone = resource.gandi_livedns_domain.nine_points.id
   name = "@"
   type = "TXT"
-  ttl  = 10800
+  ttl  = 3600
   values = [
-    "apple-domain=eK9WNHbcuQdw4QrJ",
-    "\"v=spf1 include:icloud.com ~all\"",
-  ]
-}
-
-resource "gandi_livedns_record" "nine_points_root_dkim" {
-  zone = resource.gandi_livedns_domain.nine_points.id
-  name = "sig1._domainkey"
-  type = "CNAME"
-  ttl  = 10800
-  values = [
-    "sig1.dkim.0p9.co.at.icloudmailadmin.com.",
+    "forward-email-site-verification=hb3tJy0kM0",
   ]
 }
 
