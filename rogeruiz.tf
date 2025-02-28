@@ -32,3 +32,32 @@ resource "gandi_livedns_record" "rogeruiz_root_txt" {
     "forward-email-site-verification=45Jc1z9SEu",
   ]
 }
+
+resource "gandi_livedns_record" "rogeruiz_dmarc_txt" {
+  zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "_dmarc"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "v=DMARC1; p=reject; pct=100; rua=mailto:dmarc-67b41651b6269c82332cb80e@forwardemail.net;",
+  ]
+}
+resource "gandi_livedns_record" "rogeruiz_dkim_txt" {
+  zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "fe-c2f4de89f5._domainkey"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDoRWoolefoIg5fCu7ev3+d3YA47Jpww2bMDyotDQ4lG7ySnq3TBzZQP/rSB/Mkp6i92FUrdf/r9A3YNbP5ilhHveFWCMn+Y7Kbk24ecPhH6PwN1J4XS1iKGxX+tMqcBoWMu8yFe/xAxMJTWsin0HTXDgD2oskrIcVnfsq5FvCbLQIDAQAB;",
+  ]
+}
+
+resource "gandi_livedns_record" "rogeruiz_return-path_cname" {
+  zone = resource.gandi_livedns_domain.rogeruiz.id
+  name = "fe-bounces"
+  type = "CNAME"
+  ttl  = 10800
+  values = [
+    "forwardemail.net.",
+  ]
+}
