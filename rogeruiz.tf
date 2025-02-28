@@ -44,7 +44,7 @@ resource "gandi_livedns_record" "rogeruiz_dmarc_txt" {
 }
 resource "gandi_livedns_record" "rogeruiz_dkim_txt" {
   zone = resource.gandi_livedns_domain.rogeruiz.id
-  name = "fe-c2f4de89f5._domainkey"
+  name = "fe-3c924ead09._domainkey"
   type = "TXT"
   ttl  = 3600
   values = [
