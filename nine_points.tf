@@ -33,6 +33,35 @@ resource "gandi_livedns_record" "nine_points_root_txt" {
   ]
 }
 
+resource "gandi_livedns_record" "nine_points_dmarc_txt" {
+  zone = resource.gandi_livedns_domain.nine_points.id
+  name = "_dmarc"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "v=DMARC1; p=reject; pct=100; rua=mailto:dmarc-67b41500b6269c82332cb699@forwardemail.net;",
+  ]
+}
+resource "gandi_livedns_record" "nine_points_dkim_txt" {
+  zone = resource.gandi_livedns_domain.nine_points.id
+  name = "fe-c2f4de89f5._domainkey"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC3VWKj5Hs7HmbqBbzbLmovW5fG6FOgeTUwUUfhNlc1Rh3UNXlNMT7PVI3wSOlk5yqoS7Ro7n8Ju5WJmS7pNyWXDYnArLBxdYlTjk4IreCGYGo5ohSv+9vMBkfh+5Xvh3/Lf13AbYEh3ioIj6lqMl/Rd0jqjv1lFVv8C2G5JpvzlwIDAQAB;",
+  ]
+}
+
+resource "gandi_livedns_record" "nine_points_return-path_cname" {
+  zone = resource.gandi_livedns_domain.nine_points.id
+  name = "fe-bounces"
+  type = "CNAME"
+  ttl  = 10800
+  values = [
+    "forwardemail.net.",
+  ]
+}
+
 resource "gandi_livedns_record" "nine_points_www_cname" {
   zone = resource.gandi_livedns_domain.nine_points.id
   name = "www"
