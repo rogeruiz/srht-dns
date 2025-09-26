@@ -18,58 +18,7 @@ resource "gandi_livedns_record" "rog_gr_root_txt" {
   type = "TXT"
   ttl  = 10800
   values = [
-    "\"v=spf1 include:_mailcust.gandi.net ?all\"",
     "\"google-site-verification=IztwJSDmloiYJFmZU9U-oIl4VTX3fdTVcVbfIIB3PO8\"",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_imaptcp_srv" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "_imap._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 0 0   .",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_imapstcp_srv" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "_imaps._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 1 993 mail.gandi.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_pop3_srv" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "_pop3._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 0 0   .",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_pop3s_srv" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "_pop3s.tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "10 1 995 mail.gandi.net.",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_submission_srv" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "_submission._tcp"
-  type = "SRV"
-  ttl  = 10800
-  values = [
-    "0 1 465 mail.gandi.net.",
   ]
 }
 
@@ -110,5 +59,26 @@ resource "gandi_livedns_record" "rog_gr_resume_cname" {
   ttl  = "10800"
   values = [
     "pages.sr.ht.",
+  ]
+}
+
+resource "gandi_livedns_record" "rog_gr_root_txt" {
+  zone = resource.gandi_livedns_domain.rog_gr.id
+  name = "@"
+  type = "TXT"
+  ttl  = 3600
+  values = [
+    "forward-email-site-verification=VHSl1st5jX",
+  ]
+}
+
+resource "gandi_livedns_record" "rog_gr_root_mx" {
+  zone = resource.gandi_livedns_domain.rog_gr.id
+  name = "@"
+  type = "MX"
+  ttl = 3600
+  values = [
+    "10 mx1.forwardemail.net."
+    "10 mx2.forwardemail.net."
   ]
 }
