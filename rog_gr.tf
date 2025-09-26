@@ -78,7 +78,7 @@ resource "gandi_livedns_record" "rog_gr_root_mx" {
   type = "MX"
   ttl = 3600
   values = [
-    "10 mx1.forwardemail.net."
+    "10 mx1.forwardemail.net.",
     "10 mx2.forwardemail.net."
   ]
 }
