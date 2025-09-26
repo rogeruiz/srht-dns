@@ -19,6 +19,7 @@ resource "gandi_livedns_record" "rog_gr_root_txt" {
   ttl  = 10800
   values = [
     "\"google-site-verification=IztwJSDmloiYJFmZU9U-oIl4VTX3fdTVcVbfIIB3PO8\"",
+    "\"forward-email-site-verification=VHSl1st5jX\"",
   ]
 }
 
@@ -59,16 +60,6 @@ resource "gandi_livedns_record" "rog_gr_resume_cname" {
   ttl  = "10800"
   values = [
     "pages.sr.ht.",
-  ]
-}
-
-resource "gandi_livedns_record" "rog_gr_root_txt" {
-  zone = resource.gandi_livedns_domain.rog_gr.id
-  name = "@"
-  type = "TXT"
-  ttl  = 3600
-  values = [
-    "forward-email-site-verification=VHSl1st5jX",
   ]
 }
 
